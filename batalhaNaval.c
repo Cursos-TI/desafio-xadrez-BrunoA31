@@ -21,8 +21,9 @@ int main() {
     //Criando os navios utilizando um vetor (array unidimensional) de tamanho 3 e o valor 3 para representá-los
     int navio1[3] = {3, 3, 3};
     int navio2[3] = {3, 3, 3};
+   
 
-    //Posicionando os navios no tabuleiro
+    //Posicionando os navios no tabuleiro nas posições horizontal e vertical
     tabuleiro[2][2] = navio1[0];
     tabuleiro[2][3] = navio1[1];
     tabuleiro[2][4] = navio1[2];
@@ -30,6 +31,33 @@ int main() {
     tabuleiro[5][7] = navio2[0];
     tabuleiro[6][7] = navio2[1];
     tabuleiro[7][7] = navio2[2];
+
+    //Posicionando os navios no tabuleiro na posição diagonal utilizando loops aninhados
+        for (int i = 6; i < 9; i++)
+    {
+        for (int j = 5; j > 2 ; j--)
+        {
+            if (i + j == 11)
+            {
+                tabuleiro[i][j] = 3;
+            }
+            
+        }
+        
+    }
+
+    for (int i = 3; i < 6; i++)
+    {
+        for (int j = 1; j < 4 ; j++)
+        {
+            if (i - j == 2)
+            {
+                tabuleiro[i][j] = 3;
+            }
+            
+        }
+        
+    }
 
     //Imprimindo o cabeçalho e um espaço para alinhamento das colunas
     printf("  ***TABULEIRO BATALHA NAVAL*** \n");
